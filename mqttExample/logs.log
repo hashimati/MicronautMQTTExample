@@ -1,0 +1,1685 @@
+10:30:27.416 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:30:27.648 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:30:27.747 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:30:28.646 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:30:28.657 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:30:32.739 [main] ERROR io.micronaut.runtime.Micronaut - Error starting Micronaut server: Error instantiating bean of type  [io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice]
+
+Message: Timed out waiting for a response from the server
+Path Taken: new MqttSubscriberAdvice(BeanContext beanContext,MqttBinderRegistry binderRegistry,MqttSubscriberExceptionHandler exceptionHandler,MqttAsyncClient mqttAsyncClient) --> new MqttSubscriberAdvice(BeanContext beanContext,MqttBinderRegistry binderRegistry,MqttSubscriberExceptionHandler exceptionHandler,[MqttAsyncClient mqttAsyncClient])
+io.micronaut.context.exceptions.BeanInstantiationException: Error instantiating bean of type  [io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice]
+
+Message: Timed out waiting for a response from the server
+Path Taken: new MqttSubscriberAdvice(BeanContext beanContext,MqttBinderRegistry binderRegistry,MqttSubscriberExceptionHandler exceptionHandler,MqttAsyncClient mqttAsyncClient) --> new MqttSubscriberAdvice(BeanContext beanContext,MqttBinderRegistry binderRegistry,MqttSubscriberExceptionHandler exceptionHandler,[MqttAsyncClient mqttAsyncClient])
+	at io.micronaut.context.DefaultBeanContext.resolveByBeanFactory(DefaultBeanContext.java:2367)
+	at io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2305)
+	at io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2251)
+	at io.micronaut.context.DefaultBeanContext.createRegistration(DefaultBeanContext.java:3016)
+	at io.micronaut.context.SingletonScope.getOrCreate(SingletonScope.java:80)
+	at io.micronaut.context.DefaultBeanContext.findOrCreateSingletonBeanRegistration(DefaultBeanContext.java:2918)
+	at io.micronaut.context.DefaultBeanContext.resolveBeanRegistration(DefaultBeanContext.java:2879)
+	at io.micronaut.context.DefaultBeanContext.resolveBeanRegistration(DefaultBeanContext.java:2800)
+	at io.micronaut.context.DefaultBeanContext.getBean(DefaultBeanContext.java:1617)
+	at io.micronaut.context.AbstractBeanResolutionContext.getBean(AbstractBeanResolutionContext.java:66)
+	at io.micronaut.context.AbstractInitializableBeanDefinition.resolveBean(AbstractInitializableBeanDefinition.java:2065)
+	at io.micronaut.context.AbstractInitializableBeanDefinition.getBeanForConstructorArgument(AbstractInitializableBeanDefinition.java:1297)
+	at io.micronaut.mqtt.v3.intercept.$MqttSubscriberAdvice$Definition.build(Unknown Source)
+	at io.micronaut.context.DefaultBeanContext.resolveByBeanFactory(DefaultBeanContext.java:2354)
+	at io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2305)
+	at io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2251)
+	at io.micronaut.context.DefaultBeanContext.createRegistration(DefaultBeanContext.java:3016)
+	at io.micronaut.context.SingletonScope.getOrCreate(SingletonScope.java:80)
+	at io.micronaut.context.DefaultBeanContext.findOrCreateSingletonBeanRegistration(DefaultBeanContext.java:2918)
+	at io.micronaut.context.DefaultBeanContext.resolveBeanRegistration(DefaultBeanContext.java:2879)
+	at io.micronaut.context.DefaultBeanContext.resolveBeanRegistration(DefaultBeanContext.java:2853)
+	at io.micronaut.context.DefaultBeanContext.addCandidateToList(DefaultBeanContext.java:3511)
+	at io.micronaut.context.DefaultBeanContext.resolveBeanRegistrations(DefaultBeanContext.java:3457)
+	at io.micronaut.context.DefaultBeanContext.getBeanRegistrations(DefaultBeanContext.java:3427)
+	at io.micronaut.context.DefaultBeanContext.streamOfType(DefaultBeanContext.java:941)
+	at io.micronaut.context.DefaultBeanContext.streamOfType(DefaultBeanContext.java:926)
+	at io.micronaut.context.DefaultBeanContext.streamOfType(DefaultBeanContext.java:908)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1968)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Timed out waiting for a response from the server
+	at org.eclipse.paho.client.mqttv3.internal.Token.waitForCompletion(Token.java:112)
+	at org.eclipse.paho.client.mqttv3.MqttToken.waitForCompletion(MqttToken.java:67)
+	at io.micronaut.mqtt.v3.client.MqttClientFactory.mqttClient(MqttClientFactory.java:53)
+	at io.micronaut.mqtt.v3.client.$MqttClientFactory$MqttClient0$Definition.build(Unknown Source)
+	at io.micronaut.context.DefaultBeanContext.resolveByBeanFactory(DefaultBeanContext.java:2354)
+	... 38 common frames omitted
+10:31:01.538 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:31:01.742 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:31:01.840 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:31:02.740 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:31:02.750 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:31:05.038 [main] ERROR i.m.m.e.DefaultMqttSubscriberExceptionHandler - Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+io.micronaut.mqtt.exception.MqttSubscriberException: Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:70)
+	at io.micronaut.mqtt.intercept.AbstractMqttSubscriberAdvice.process(AbstractMqttSubscriberAdvice.java:100)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$39(DefaultBeanContext.java:1996)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1969)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Client is not connected
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.sendNoWait(ClientComms.java:205)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribeBase(MqttAsyncClient.java:1088)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1152)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1129)
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:68)
+	... 23 common frames omitted
+10:31:06.044 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 6677ms. Server Running: http://localhost:9090
+10:32:15.702 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:16.253 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:16.316 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:16.316 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:16.316 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:16 AST 2022 with data type: DATE
+10:32:16.332 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:16 AST 2022 with data type: DATE
+10:32:19.502 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:20.020 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:20.020 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:20.020 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:20.020 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:20 AST 2022 with data type: DATE
+10:32:20.020 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:20 AST 2022 with data type: DATE
+10:32:31.336 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:31.414 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:31.414 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:31.414 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:31.433 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:31 AST 2022 with data type: DATE
+10:32:31.433 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:31 AST 2022 with data type: DATE
+10:32:32.075 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.089 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.089 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:32.089 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:32.089 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.089 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.261 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.277 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.277 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:32.277 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:32.277 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.277 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.450 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.497 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.497 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:32.497 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:32.497 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.497 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.654 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.654 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.654 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:32.654 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:32.654 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.654 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.826 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.836 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:32.836 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:32.836 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:32.842 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:32.842 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:32 AST 2022 with data type: DATE
+10:32:33.036 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:33.046 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:33.046 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:33.046 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:33.046 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:33 AST 2022 with data type: DATE
+10:32:33.046 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:33 AST 2022 with data type: DATE
+10:32:33.548 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:34.583 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:32:34.599 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:32:34.609 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:32:34.609 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:32:34 AST 2022 with data type: DATE
+10:32:34.609 [MQTT Call: 72c2951e-3d30-4bd0-9a71-62257c021f75] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:32:34 AST 2022 with data type: DATE
+10:33:37.838 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:33:38.169 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:33:38.344 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:33:40.124 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:33:40.137 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:33:43.950 [main] ERROR i.m.m.e.DefaultMqttSubscriberExceptionHandler - Failed to subscribe to the topics: [Ljava.lang.String;@7f6b7426
+io.micronaut.mqtt.exception.MqttSubscriberException: Failed to subscribe to the topics: [Ljava.lang.String;@7f6b7426
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:70)
+	at io.micronaut.mqtt.intercept.AbstractMqttSubscriberAdvice.process(AbstractMqttSubscriberAdvice.java:100)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$39(DefaultBeanContext.java:1996)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1969)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Client is not connected
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.sendNoWait(ClientComms.java:205)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribeBase(MqttAsyncClient.java:1088)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1152)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1129)
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:68)
+	... 23 common frames omitted
+10:33:45.041 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 9608ms. Server Running: http://localhost:9090
+10:33:54.220 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:33:54.962 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:33:55.088 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:33:55.088 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:33:55.088 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:33:55 AST 2022 with data type: DATE
+10:33:55.103 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:33:55 AST 2022 with data type: DATE
+10:33:59.793 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:33:59.961 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:33:59.961 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:33:59.961 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:33:59.961 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:33:59 AST 2022 with data type: DATE
+10:33:59.961 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:33:59 AST 2022 with data type: DATE
+10:34:00.841 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:00.856 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:00.856 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:00.856 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:00.856 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:00 AST 2022 with data type: DATE
+10:34:00.856 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:00 AST 2022 with data type: DATE
+10:34:01.035 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.139 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.139 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:01.139 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:01.139 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:01.139 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:01.264 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.281 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.281 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:01.281 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:01.281 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:01.281 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:01.626 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.637 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.637 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:01.637 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:01.642 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:01.642 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:01.924 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.937 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:01.937 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:01.937 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:01.937 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:01.937 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:01 AST 2022 with data type: DATE
+10:34:02.254 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:02.364 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:02.364 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:02.364 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:02.364 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:02 AST 2022 with data type: DATE
+10:34:02.364 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:02 AST 2022 with data type: DATE
+10:34:02.490 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:02.517 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:02.517 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:02.517 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:02.517 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:02 AST 2022 with data type: DATE
+10:34:02.517 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:02 AST 2022 with data type: DATE
+10:34:04.103 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.196 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.196 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:04.196 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:04.196 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.196 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.311 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.327 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.327 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:04.327 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:04.327 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.327 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.500 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.518 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.518 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:04.518 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:04.518 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.518 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.675 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.695 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.695 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:04.695 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:04.695 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.695 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.831 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.847 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:04.847 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:04.847 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:04.847 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:04.847 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:04 AST 2022 with data type: DATE
+10:34:05.083 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:05.099 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:05.099 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:05.099 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:05.099 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:05 AST 2022 with data type: DATE
+10:34:05.099 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:05 AST 2022 with data type: DATE
+10:34:19.844 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:19.915 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@58b871b
+10:34:19.915 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:34:19.915 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 1 to value apple with data type: STRING
+10:34:19.915 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:34:19 AST 2022 with data type: DATE
+10:34:19.915 [MQTT Call: 2eea15c6-c3de-4a5e-af2f-66e93f923c4b] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:34:19 AST 2022 with data type: DATE
+10:34:34.365 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - find All
+10:34:34.366 [default-nioEventLoopGroup-1-2] INFO  io.hashimati.services.FruitService - Find All
+10:34:34.371 [default-nioEventLoopGroup-1-2] DEBUG io.micronaut.data.query - Executing Query: SELECT fruit_.`id`,fruit_.`name`,fruit_.`dateCreated`,fruit_.`dateUpdated` FROM `fruits` fruit_
+10:35:55.568 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:35:55.990 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:35:56.096 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:35:57.205 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:35:57.220 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:35:59.566 [main] ERROR i.m.m.e.DefaultMqttSubscriberExceptionHandler - Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+io.micronaut.mqtt.exception.MqttSubscriberException: Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:70)
+	at io.micronaut.mqtt.intercept.AbstractMqttSubscriberAdvice.process(AbstractMqttSubscriberAdvice.java:100)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$39(DefaultBeanContext.java:1996)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1969)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Client is not connected
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.sendNoWait(ClientComms.java:205)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribeBase(MqttAsyncClient.java:1088)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1152)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1129)
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:68)
+	... 23 common frames omitted
+10:36:00.555 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 7227ms. Server Running: http://localhost:9090
+10:36:01.324 [default-nioEventLoopGroup-1-3] ERROR i.m.h.s.netty.RoutingInBoundHandler - Error writing final response: An established connection was aborted by the software in your host machine
+java.io.IOException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:466)
+	at java.base/sun.nio.ch.FileChannelImpl.transferToTrustedChannel(FileChannelImpl.java:589)
+	at java.base/sun.nio.ch.FileChannelImpl.transferTo(FileChannelImpl.java:682)
+	at io.netty.channel.DefaultFileRegion.transferTo(DefaultFileRegion.java:130)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWriteFileRegion(NioSocketChannel.java:369)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWriteInternal(AbstractNioByteChannel.java:238)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWrite0(AbstractNioByteChannel.java:212)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:407)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:354)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.flush(CombinedChannelDuplexHandler.java:531)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.CombinedChannelDuplexHandler.flush(CombinedChannelDuplexHandler.java:356)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.handler.stream.ChunkedWriteHandler.doFlush(ChunkedWriteHandler.java:313)
+	at io.netty.handler.stream.ChunkedWriteHandler.flush(ChunkedWriteHandler.java:131)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:925)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:941)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:966)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:934)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:984)
+	at io.micronaut.http.server.netty.types.files.NettySystemFileCustomizableResponseType.write(NettySystemFileCustomizableResponseType.java:129)
+	at io.micronaut.http.server.netty.types.files.FileTypeHandler.handle(FileTypeHandler.java:105)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$NettyCustomizableResponseTypeHandlerInvoker.invoke(RoutingInBoundHandler.java:1478)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.writeFinalNettyResponse(RoutingInBoundHandler.java:1247)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.encodeHttpResponse(RoutingInBoundHandler.java:1040)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.access$000(RoutingInBoundHandler.java:150)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:514)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:502)
+	at reactor.core.publisher.StrictSubscriber.onNext(StrictSubscriber.java:89)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:165)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:150)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at io.micronaut.tracing.instrument.util.TracingPublisher$TracingSubscriber.onNext(TracingPublisher.java:327)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.drain(FluxSwitchMap.java:355)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.innerNext(FluxSwitchMap.java:413)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onNext(FluxSwitchMap.java:512)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onSubscribe(FluxSwitchMap.java:499)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onNext(FluxSwitchMap.java:236)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onSubscribe(FluxSwitchMap.java:201)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.tracing.instrument.util.TracingCorePublisher.doSubscribe(TracingCorePublisher.java:164)
+	at io.micronaut.tracing.instrument.util.TracingPublisher.subscribe(TracingPublisher.java:193)
+	at reactor.core.publisher.FluxSource.subscribe(FluxSource.java:67)
+	at reactor.core.publisher.InternalFluxOperator.subscribe(InternalFluxOperator.java:62)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher.subscribe(WebMetricsPublisher.java:150)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.filterAndEncodeResponse(RoutingInBoundHandler.java:502)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:362)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:147)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.channelRead(HttpStreamsHandler.java:224)
+	at io.micronaut.http.netty.stream.HttpStreamsServerHandler.channelRead(HttpStreamsServerHandler.java:134)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.HttpServerKeepAliveHandler.channelRead(HttpServerKeepAliveHandler.java:64)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:200)
+	at io.netty.handler.flow.FlowControlHandler.channelRead(FlowControlHandler.java:162)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:336)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:308)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+10:37:34.367 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:37:34.597 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:37:34.706 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:37:35.669 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:37:35.684 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:37:38.475 [main] ERROR i.m.m.e.DefaultMqttSubscriberExceptionHandler - Failed to subscribe to the topics: [Ljava.lang.String;@57e03347
+io.micronaut.mqtt.exception.MqttSubscriberException: Failed to subscribe to the topics: [Ljava.lang.String;@57e03347
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:70)
+	at io.micronaut.mqtt.intercept.AbstractMqttSubscriberAdvice.process(AbstractMqttSubscriberAdvice.java:100)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$39(DefaultBeanContext.java:1996)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1969)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Client is not connected
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.sendNoWait(ClientComms.java:205)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribeBase(MqttAsyncClient.java:1088)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1152)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1129)
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:68)
+	... 23 common frames omitted
+10:37:39.393 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 6480ms. Server Running: http://localhost:9090
+10:37:49.977 [default-nioEventLoopGroup-1-3] ERROR i.m.h.s.netty.RoutingInBoundHandler - Error writing final response: An established connection was aborted by the software in your host machine
+java.io.IOException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:466)
+	at java.base/sun.nio.ch.FileChannelImpl.transferToTrustedChannel(FileChannelImpl.java:589)
+	at java.base/sun.nio.ch.FileChannelImpl.transferTo(FileChannelImpl.java:682)
+	at io.netty.channel.DefaultFileRegion.transferTo(DefaultFileRegion.java:130)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWriteFileRegion(NioSocketChannel.java:369)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWriteInternal(AbstractNioByteChannel.java:238)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWrite0(AbstractNioByteChannel.java:212)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:407)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:354)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.flush(CombinedChannelDuplexHandler.java:531)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.CombinedChannelDuplexHandler.flush(CombinedChannelDuplexHandler.java:356)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.handler.stream.ChunkedWriteHandler.doFlush(ChunkedWriteHandler.java:313)
+	at io.netty.handler.stream.ChunkedWriteHandler.flush(ChunkedWriteHandler.java:131)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:925)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:941)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:966)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:934)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:984)
+	at io.micronaut.http.server.netty.types.files.NettySystemFileCustomizableResponseType.write(NettySystemFileCustomizableResponseType.java:129)
+	at io.micronaut.http.server.netty.types.files.FileTypeHandler.handle(FileTypeHandler.java:105)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$NettyCustomizableResponseTypeHandlerInvoker.invoke(RoutingInBoundHandler.java:1478)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.writeFinalNettyResponse(RoutingInBoundHandler.java:1247)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.encodeHttpResponse(RoutingInBoundHandler.java:1040)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.access$000(RoutingInBoundHandler.java:150)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:514)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:502)
+	at reactor.core.publisher.StrictSubscriber.onNext(StrictSubscriber.java:89)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:165)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:150)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at io.micronaut.tracing.instrument.util.TracingPublisher$TracingSubscriber.onNext(TracingPublisher.java:327)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.drain(FluxSwitchMap.java:355)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.innerNext(FluxSwitchMap.java:413)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onNext(FluxSwitchMap.java:512)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onSubscribe(FluxSwitchMap.java:499)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onNext(FluxSwitchMap.java:236)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onSubscribe(FluxSwitchMap.java:201)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.tracing.instrument.util.TracingCorePublisher.doSubscribe(TracingCorePublisher.java:164)
+	at io.micronaut.tracing.instrument.util.TracingPublisher.subscribe(TracingPublisher.java:193)
+	at reactor.core.publisher.FluxSource.subscribe(FluxSource.java:67)
+	at reactor.core.publisher.InternalFluxOperator.subscribe(InternalFluxOperator.java:62)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher.subscribe(WebMetricsPublisher.java:150)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.filterAndEncodeResponse(RoutingInBoundHandler.java:502)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:362)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:147)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.channelRead(HttpStreamsHandler.java:224)
+	at io.micronaut.http.netty.stream.HttpStreamsServerHandler.channelRead(HttpStreamsServerHandler.java:134)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.HttpServerKeepAliveHandler.channelRead(HttpServerKeepAliveHandler.java:64)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:200)
+	at io.netty.handler.flow.FlowControlHandler.channelRead(FlowControlHandler.java:162)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:336)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:308)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+10:38:42.427 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:38:42.647 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:38:42.757 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:38:43.573 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:38:43.589 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:38:46.681 [main] ERROR i.m.m.e.DefaultMqttSubscriberExceptionHandler - Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+io.micronaut.mqtt.exception.MqttSubscriberException: Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:70)
+	at io.micronaut.mqtt.intercept.AbstractMqttSubscriberAdvice.process(AbstractMqttSubscriberAdvice.java:100)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$39(DefaultBeanContext.java:1996)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1969)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Client is not connected
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.sendNoWait(ClientComms.java:205)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribeBase(MqttAsyncClient.java:1088)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1152)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1129)
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:68)
+	... 23 common frames omitted
+10:38:47.544 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 6489ms. Server Running: http://localhost:9090
+10:38:48.000 [default-nioEventLoopGroup-1-2] ERROR i.m.h.s.netty.RoutingInBoundHandler - Error writing final response: An established connection was aborted by the software in your host machine
+java.io.IOException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:466)
+	at java.base/sun.nio.ch.FileChannelImpl.transferToTrustedChannel(FileChannelImpl.java:589)
+	at java.base/sun.nio.ch.FileChannelImpl.transferTo(FileChannelImpl.java:682)
+	at io.netty.channel.DefaultFileRegion.transferTo(DefaultFileRegion.java:130)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWriteFileRegion(NioSocketChannel.java:369)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWriteInternal(AbstractNioByteChannel.java:238)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWrite0(AbstractNioByteChannel.java:212)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:407)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:354)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.flush(CombinedChannelDuplexHandler.java:531)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.CombinedChannelDuplexHandler.flush(CombinedChannelDuplexHandler.java:356)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.handler.stream.ChunkedWriteHandler.doFlush(ChunkedWriteHandler.java:313)
+	at io.netty.handler.stream.ChunkedWriteHandler.flush(ChunkedWriteHandler.java:131)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:925)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:941)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:966)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:934)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:984)
+	at io.micronaut.http.server.netty.types.files.NettySystemFileCustomizableResponseType.write(NettySystemFileCustomizableResponseType.java:129)
+	at io.micronaut.http.server.netty.types.files.FileTypeHandler.handle(FileTypeHandler.java:105)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$NettyCustomizableResponseTypeHandlerInvoker.invoke(RoutingInBoundHandler.java:1478)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.writeFinalNettyResponse(RoutingInBoundHandler.java:1247)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.encodeHttpResponse(RoutingInBoundHandler.java:1040)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.access$000(RoutingInBoundHandler.java:150)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:514)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:502)
+	at reactor.core.publisher.StrictSubscriber.onNext(StrictSubscriber.java:89)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:165)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:150)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at io.micronaut.tracing.instrument.util.TracingPublisher$TracingSubscriber.onNext(TracingPublisher.java:327)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.drain(FluxSwitchMap.java:355)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.innerNext(FluxSwitchMap.java:413)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onNext(FluxSwitchMap.java:512)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onSubscribe(FluxSwitchMap.java:499)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onNext(FluxSwitchMap.java:236)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onSubscribe(FluxSwitchMap.java:201)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.tracing.instrument.util.TracingCorePublisher.doSubscribe(TracingCorePublisher.java:164)
+	at io.micronaut.tracing.instrument.util.TracingPublisher.subscribe(TracingPublisher.java:193)
+	at reactor.core.publisher.FluxSource.subscribe(FluxSource.java:67)
+	at reactor.core.publisher.InternalFluxOperator.subscribe(InternalFluxOperator.java:62)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher.subscribe(WebMetricsPublisher.java:150)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.filterAndEncodeResponse(RoutingInBoundHandler.java:502)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:362)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:147)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.channelRead(HttpStreamsHandler.java:224)
+	at io.micronaut.http.netty.stream.HttpStreamsServerHandler.channelRead(HttpStreamsServerHandler.java:134)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.HttpServerKeepAliveHandler.channelRead(HttpServerKeepAliveHandler.java:64)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:200)
+	at io.netty.handler.flow.FlowControlHandler.channelRead(FlowControlHandler.java:162)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:336)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:308)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+10:39:37.966 [default-nioEventLoopGroup-1-5] ERROR i.m.h.s.netty.RoutingInBoundHandler - Error writing final response: An established connection was aborted by the software in your host machine
+java.io.IOException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:466)
+	at java.base/sun.nio.ch.FileChannelImpl.transferToTrustedChannel(FileChannelImpl.java:589)
+	at java.base/sun.nio.ch.FileChannelImpl.transferTo(FileChannelImpl.java:682)
+	at io.netty.channel.DefaultFileRegion.transferTo(DefaultFileRegion.java:130)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWriteFileRegion(NioSocketChannel.java:369)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWriteInternal(AbstractNioByteChannel.java:238)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWrite0(AbstractNioByteChannel.java:212)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:407)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:354)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.flush(CombinedChannelDuplexHandler.java:531)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.CombinedChannelDuplexHandler.flush(CombinedChannelDuplexHandler.java:356)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.handler.stream.ChunkedWriteHandler.doFlush(ChunkedWriteHandler.java:313)
+	at io.netty.handler.stream.ChunkedWriteHandler.flush(ChunkedWriteHandler.java:131)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:925)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:941)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:966)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:934)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:984)
+	at io.micronaut.http.server.netty.types.files.NettySystemFileCustomizableResponseType.write(NettySystemFileCustomizableResponseType.java:129)
+	at io.micronaut.http.server.netty.types.files.FileTypeHandler.handle(FileTypeHandler.java:105)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$NettyCustomizableResponseTypeHandlerInvoker.invoke(RoutingInBoundHandler.java:1478)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.writeFinalNettyResponse(RoutingInBoundHandler.java:1247)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.encodeHttpResponse(RoutingInBoundHandler.java:1040)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.access$000(RoutingInBoundHandler.java:150)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:514)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:502)
+	at reactor.core.publisher.StrictSubscriber.onNext(StrictSubscriber.java:89)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:165)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:150)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at io.micronaut.tracing.instrument.util.TracingPublisher$TracingSubscriber.onNext(TracingPublisher.java:327)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.drain(FluxSwitchMap.java:355)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.innerNext(FluxSwitchMap.java:413)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onNext(FluxSwitchMap.java:512)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onSubscribe(FluxSwitchMap.java:499)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onNext(FluxSwitchMap.java:236)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onSubscribe(FluxSwitchMap.java:201)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.tracing.instrument.util.TracingCorePublisher.doSubscribe(TracingCorePublisher.java:164)
+	at io.micronaut.tracing.instrument.util.TracingPublisher.subscribe(TracingPublisher.java:193)
+	at reactor.core.publisher.FluxSource.subscribe(FluxSource.java:67)
+	at reactor.core.publisher.InternalFluxOperator.subscribe(InternalFluxOperator.java:62)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher.subscribe(WebMetricsPublisher.java:150)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.filterAndEncodeResponse(RoutingInBoundHandler.java:502)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:362)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:147)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.channelRead(HttpStreamsHandler.java:224)
+	at io.micronaut.http.netty.stream.HttpStreamsServerHandler.channelRead(HttpStreamsServerHandler.java:134)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.HttpServerKeepAliveHandler.channelRead(HttpServerKeepAliveHandler.java:64)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:200)
+	at io.netty.handler.flow.FlowControlHandler.channelRead(FlowControlHandler.java:162)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:336)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:308)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+10:39:59.407 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:39:59.640 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:39:59.738 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:40:00.603 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:40:00.614 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:40:02.854 [main] ERROR i.m.m.e.DefaultMqttSubscriberExceptionHandler - Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+io.micronaut.mqtt.exception.MqttSubscriberException: Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:70)
+	at io.micronaut.mqtt.intercept.AbstractMqttSubscriberAdvice.process(AbstractMqttSubscriberAdvice.java:100)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$39(DefaultBeanContext.java:1996)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1969)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Client is not connected
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.sendNoWait(ClientComms.java:205)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribeBase(MqttAsyncClient.java:1088)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1152)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1129)
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:68)
+	... 23 common frames omitted
+10:40:03.731 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 5697ms. Server Running: http://localhost:9090
+10:40:11.512 [default-nioEventLoopGroup-1-2] ERROR i.m.h.s.netty.RoutingInBoundHandler - Error writing final response: An established connection was aborted by the software in your host machine
+java.io.IOException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:466)
+	at java.base/sun.nio.ch.FileChannelImpl.transferToTrustedChannel(FileChannelImpl.java:589)
+	at java.base/sun.nio.ch.FileChannelImpl.transferTo(FileChannelImpl.java:682)
+	at io.netty.channel.DefaultFileRegion.transferTo(DefaultFileRegion.java:130)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWriteFileRegion(NioSocketChannel.java:369)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWriteInternal(AbstractNioByteChannel.java:238)
+	at io.netty.channel.nio.AbstractNioByteChannel.doWrite0(AbstractNioByteChannel.java:212)
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:407)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:354)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.flush(CombinedChannelDuplexHandler.java:531)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.CombinedChannelDuplexHandler.flush(CombinedChannelDuplexHandler.java:356)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.handler.stream.ChunkedWriteHandler.doFlush(ChunkedWriteHandler.java:313)
+	at io.netty.handler.stream.ChunkedWriteHandler.flush(ChunkedWriteHandler.java:131)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:923)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907)
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:893)
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:925)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:941)
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:966)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:934)
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:984)
+	at io.micronaut.http.server.netty.types.files.NettySystemFileCustomizableResponseType.write(NettySystemFileCustomizableResponseType.java:129)
+	at io.micronaut.http.server.netty.types.files.FileTypeHandler.handle(FileTypeHandler.java:105)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$NettyCustomizableResponseTypeHandlerInvoker.invoke(RoutingInBoundHandler.java:1478)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.writeFinalNettyResponse(RoutingInBoundHandler.java:1247)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.encodeHttpResponse(RoutingInBoundHandler.java:1040)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.access$000(RoutingInBoundHandler.java:150)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:514)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler$1.onNext(RoutingInBoundHandler.java:502)
+	at reactor.core.publisher.StrictSubscriber.onNext(StrictSubscriber.java:89)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:165)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher$1.onNext(WebMetricsPublisher.java:150)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at io.micronaut.tracing.instrument.util.TracingPublisher$TracingSubscriber.onNext(TracingPublisher.java:327)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:712)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:955)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.drain(FluxSwitchMap.java:355)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.innerNext(FluxSwitchMap.java:413)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onNext(FluxSwitchMap.java:512)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapInner.onSubscribe(FluxSwitchMap.java:499)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onNext(FluxSwitchMap.java:236)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onNext(ReactorSubscriber.java:57)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxSwitchMap$SwitchMapMain.onSubscribe(FluxSwitchMap.java:201)
+	at io.micronaut.reactive.reactor.instrument.ReactorSubscriber.onSubscribe(ReactorSubscriber.java:50)
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.tracing.instrument.util.TracingCorePublisher.doSubscribe(TracingCorePublisher.java:164)
+	at io.micronaut.tracing.instrument.util.TracingPublisher.subscribe(TracingPublisher.java:193)
+	at reactor.core.publisher.FluxSource.subscribe(FluxSource.java:67)
+	at reactor.core.publisher.InternalFluxOperator.subscribe(InternalFluxOperator.java:62)
+	at io.micronaut.configuration.metrics.binder.web.WebMetricsPublisher.subscribe(WebMetricsPublisher.java:150)
+	at reactor.core.publisher.Flux.subscribe(Flux.java:8522)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.filterAndEncodeResponse(RoutingInBoundHandler.java:502)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:362)
+	at io.micronaut.http.server.netty.RoutingInBoundHandler.channelRead0(RoutingInBoundHandler.java:147)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.micronaut.http.netty.stream.HttpStreamsHandler.channelRead(HttpStreamsHandler.java:224)
+	at io.micronaut.http.netty.stream.HttpStreamsServerHandler.channelRead(HttpStreamsServerHandler.java:134)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.HttpServerKeepAliveHandler.channelRead(HttpServerKeepAliveHandler.java:64)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:200)
+	at io.netty.handler.flow.FlowControlHandler.channelRead(FlowControlHandler.java:162)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:336)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:308)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+10:40:16.245 [default-nioEventLoopGroup-1-3] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:40:16.732 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:40:16.779 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:40:16.779 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:40:16.779 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:40:16 AST 2022 with data type: DATE
+10:40:16.794 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:40:16 AST 2022 with data type: DATE
+10:42:34.886 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - find All
+10:42:34.887 [default-nioEventLoopGroup-1-4] INFO  io.hashimati.services.FruitService - Find All
+10:42:34.893 [default-nioEventLoopGroup-1-4] DEBUG io.micronaut.data.query - Executing Query: SELECT fruit_.`id`,fruit_.`name`,fruit_.`dateCreated`,fruit_.`dateUpdated` FROM `fruits` fruit_
+10:42:40.745 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:40.797 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:40.797 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:40.797 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:40.797 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:40 AST 2022 with data type: DATE
+10:42:40.797 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:40 AST 2022 with data type: DATE
+10:42:40.906 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:40.922 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:40.922 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:40.922 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:40.922 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:40 AST 2022 with data type: DATE
+10:42:40.922 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:40 AST 2022 with data type: DATE
+10:42:41.095 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.095 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.095 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:41.095 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:41.095 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.095 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.251 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.267 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.267 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:41.267 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:41.267 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.267 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.377 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.424 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.424 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:41.424 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:41.424 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.424 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.550 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.550 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.565 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:41.565 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:41.565 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.565 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.722 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.722 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.722 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:41.722 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:41.722 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.722 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.880 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.942 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:41.942 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:41.942 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:41.942 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:41.942 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:41 AST 2022 with data type: DATE
+10:42:42.052 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.067 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.067 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:42.067 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:42.067 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.067 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.225 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.240 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.240 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:42.240 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:42.240 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.240 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.429 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.444 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.444 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:42.444 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:42.444 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.444 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.602 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.602 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.602 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:42.602 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:42.602 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.602 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.790 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.790 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.790 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:42.790 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:42.790 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.790 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.916 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.916 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:42.931 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:42.931 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:42.931 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:42.931 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:42 AST 2022 with data type: DATE
+10:42:43.077 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.088 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.088 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:43.088 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:43.088 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:43.088 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:43.230 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.247 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.247 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:43.247 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:43.247 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:43.247 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:43.378 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.378 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.389 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:43.389 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:43.389 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:43.389 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:43.579 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.593 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:42:43.593 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:42:43.593 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:42:43.593 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:43.593 [MQTT Call: a202e77e-28c1-4424-a14a-3a21d4653e9d] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:42:43 AST 2022 with data type: DATE
+10:42:46.700 [default-nioEventLoopGroup-1-4] INFO  i.h.controllers.FruitController - find All
+10:42:46.700 [default-nioEventLoopGroup-1-4] INFO  io.hashimati.services.FruitService - Find All
+10:42:46.700 [default-nioEventLoopGroup-1-4] DEBUG io.micronaut.data.query - Executing Query: SELECT fruit_.`id`,fruit_.`name`,fruit_.`dateCreated`,fruit_.`dateUpdated` FROM `fruits` fruit_
+10:44:38.589 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:44:38.811 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:44:38.914 [main] INFO  i.m.l.AbstractLiquibaseMigration - Running migrations for database with qualifier [default]
+10:44:39.804 [main] DEBUG io.micronaut.data.query - Dropping Table: 
+DROP TABLE `fruits`
+10:44:39.816 [main] DEBUG io.micronaut.data.query - Executing CREATE statement: 
+CREATE TABLE `fruits` (`id` BIGINT AUTO_INCREMENT PRIMARY KEY,`name` VARCHAR(255) NOT NULL,`dateCreated` DATE,`dateUpdated` DATE);
+10:44:42.433 [main] ERROR i.m.m.e.DefaultMqttSubscriberExceptionHandler - Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+io.micronaut.mqtt.exception.MqttSubscriberException: Failed to subscribe to the topics: [Ljava.lang.String;@6d969330
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:70)
+	at io.micronaut.mqtt.intercept.AbstractMqttSubscriberAdvice.process(AbstractMqttSubscriberAdvice.java:100)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$39(DefaultBeanContext.java:1996)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at io.micronaut.context.DefaultBeanContext.lambda$initializeContext$40(DefaultBeanContext.java:1969)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1336)
+	at io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1967)
+	at io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:249)
+	at io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3326)
+	at io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3684)
+	at io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:341)
+	at io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:194)
+	at io.micronaut.runtime.Micronaut.start(Micronaut.java:75)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:323)
+	at io.micronaut.runtime.Micronaut.run(Micronaut.java:309)
+	at io.hashimati.Application.main(Application.java:16)
+Caused by: org.eclipse.paho.client.mqttv3.MqttException: Client is not connected
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.sendNoWait(ClientComms.java:205)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribeBase(MqttAsyncClient.java:1088)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1152)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.subscribe(MqttAsyncClient.java:1129)
+	at io.micronaut.mqtt.v3.intercept.MqttSubscriberAdvice.subscribe(MqttSubscriberAdvice.java:68)
+	... 23 common frames omitted
+10:44:43.310 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 6322ms. Server Running: http://localhost:9090
+10:44:46.672 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - find All
+10:44:46.696 [default-nioEventLoopGroup-1-2] INFO  io.hashimati.services.FruitService - Find All
+10:44:46.752 [default-nioEventLoopGroup-1-2] DEBUG io.micronaut.data.query - Executing Query: SELECT fruit_.`id`,fruit_.`name`,fruit_.`dateCreated`,fruit_.`dateUpdated` FROM `fruits` fruit_
+10:44:50.392 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:51.921 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:51.930 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:51.930 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:51.930 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:51 AST 2022 with data type: DATE
+10:44:51.946 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:51 AST 2022 with data type: DATE
+10:44:55.374 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.476 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.476 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:55.476 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:55.476 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:55.476 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:55.528 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.537 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.537 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:55.537 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:55.537 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:55.537 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:55.757 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.772 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.772 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:55.772 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:55.772 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:55.772 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:55.960 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.961 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:55.961 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:55.961 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:55.961 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:55.961 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:55 AST 2022 with data type: DATE
+10:44:56.149 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:56.165 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:56.165 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:56.165 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:56.165 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:56 AST 2022 with data type: DATE
+10:44:56.165 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:56 AST 2022 with data type: DATE
+10:44:56.353 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:56.353 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:56.353 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:56.353 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:56.353 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:56 AST 2022 with data type: DATE
+10:44:56.353 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:56 AST 2022 with data type: DATE
+10:44:56.573 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:56.761 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:57.765 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:57.796 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:57.796 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:57.796 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:57 AST 2022 with data type: DATE
+10:44:57.796 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:57 AST 2022 with data type: DATE
+10:44:57.807 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:57.807 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:57.808 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:57.808 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:57 AST 2022 with data type: DATE
+10:44:57.808 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:57 AST 2022 with data type: DATE
+10:44:58.753 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:58.757 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:58.757 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:58.757 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:58.757 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:58 AST 2022 with data type: DATE
+10:44:58.757 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:58 AST 2022 with data type: DATE
+10:44:58.926 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:58.957 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:58.957 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:58.957 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:58.957 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:58 AST 2022 with data type: DATE
+10:44:58.957 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:58 AST 2022 with data type: DATE
+10:44:59.114 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.130 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.130 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:59.130 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:59.130 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.130 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.318 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.318 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.318 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:59.318 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:59.318 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.318 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.491 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.522 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.522 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:59.522 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:59.522 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.522 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.700 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.704 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.704 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:59.704 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:59.704 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.704 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.884 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.899 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:44:59.899 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:44:59.899 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:44:59.899 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:44:59.899 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:44:59 AST 2022 with data type: DATE
+10:45:00.056 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.119 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.119 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:45:00.119 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:45:00.119 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:00.119 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:00.260 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.276 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.276 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:45:00.276 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:45:00.276 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:00.276 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:00.449 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.464 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.464 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:45:00.464 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:45:00.464 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:00.464 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:00.653 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.668 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] INFO  io.hashimati.services.FruitService - Saving  Fruit : io.hashimati.domains.Fruit@cad563d2
+10:45:00.668 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] DEBUG io.micronaut.data.query - Executing SQL query: INSERT INTO `fruits` (`name`,`dateCreated`,`dateUpdated`) VALUES (?,?,?)
+10:45:00.668 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 1 to value string with data type: STRING
+10:45:00.668 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 2 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:00.668 [MQTT Call: b32d097a-c2ac-435a-afcd-3e0360adbab9] TRACE io.micronaut.data.query - Binding parameter at position 3 to value Tue Nov 22 10:45:00 AST 2022 with data type: DATE
+10:45:04.497 [default-nioEventLoopGroup-1-2] INFO  i.h.controllers.FruitController - find All
+10:45:04.497 [default-nioEventLoopGroup-1-2] INFO  io.hashimati.services.FruitService - Find All
+10:45:04.497 [default-nioEventLoopGroup-1-2] DEBUG io.micronaut.data.query - Executing Query: SELECT fruit_.`id`,fruit_.`name`,fruit_.`dateCreated`,fruit_.`dateUpdated` FROM `fruits` fruit_
